@@ -1,2 +1,3 @@
 # Slice-It-All-Clone-
-#Space tuşunu dene
+
+30.08.2021 --> Slice It All oyununun temel kesme mekaniği
