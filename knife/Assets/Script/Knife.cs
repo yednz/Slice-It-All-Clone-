@@ -25,6 +25,7 @@ public class Knife : MonoBehaviour
     void Start()
     {
         lastTimePressedButton = Time.time;
+        StartCoroutine(dumpClear());
     }
 
 
@@ -89,7 +90,6 @@ public class Knife : MonoBehaviour
     private void FreezePosZ()
     {
         rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-
     }
 
 
@@ -98,6 +98,7 @@ public class Knife : MonoBehaviour
         if (coll.gameObject.tag == "wood")
         {
             coll.gameObject.GetComponent<BoxCollider>().enabled = false;
+            coll.gameObject.transform.parent = GameManager.GetInstance().dump;
 
             Rigidbody wood0rb = coll.gameObject.transform.GetChild(0).GetComponent<Rigidbody>();
             Rigidbody wood1rb = coll.gameObject.transform.GetChild(1).GetComponent<Rigidbody>();
@@ -113,5 +114,17 @@ public class Knife : MonoBehaviour
 
             rb.AddForce(0.25f * Vector2.down, ForceMode.Impulse);
         }
+    }
+
+
+    IEnumerator dumpClear()
+    {
+        yield return new WaitForSeconds(20f);
+
+        for (int i = 0; i < GameManager.GetInstance().dump.childCount; i++)
+        {
+            Destroy(GameManager.GetInstance().dump.GetChild(i).gameObject);
+        }
+        StartCoroutine(dumpClear());
     }
 }

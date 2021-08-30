@@ -26,4 +26,5 @@ public class GameManager : MonoBehaviour
     }
 
     public Transform knife;
+    public Transform dump;
 }
