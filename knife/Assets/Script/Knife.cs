@@ -81,7 +81,7 @@ public class Knife : MonoBehaviour
     {
         rb.constraints = orginalRigibodyConstraints;
 
-        rb.AddForce(force * new Vector3(0, 0.75f, 0.075f), ForceMode.Impulse);
+        rb.AddForceAtPosition(force * new Vector3(0, 0.6f, 0.075f),transform.position, ForceMode.Impulse);
         rb.AddTorque(torque, 0f, 0f, ForceMode.Impulse);
 
         lastTimePressedButton = Time.time;
@@ -119,7 +119,7 @@ public class Knife : MonoBehaviour
 
     IEnumerator dumpClear()
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(50f);
 
         for (int i = 0; i < GameManager.GetInstance().dump.childCount; i++)
         {
