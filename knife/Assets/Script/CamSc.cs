@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class CamSc : MonoBehaviour
 {
-    private Transform knife;
-    private Vector3 camPosDif;
+    private Transform target;
+    private Vector3 desiredPos;
+    public Vector3 offset;
+
+    [Range(0.0f, 1.0f)] public float smoothSpeed;
+    [Range(-1.0f, 1.0f)] public float targetDiff;
+
     void Start()
     {
-        knife = GameManager.GetInstance().knife;
-
-        camPosDif = transform.position - knife.transform.position;
+        target = GameManager.GetInstance().knife;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = knife.transform.position + camPosDif;
+    private void FixedUpdate()
+    { 
+        desiredPos = target.position + offset;
+
+        transform.position = Vector3.Lerp(transform.position, desiredPos, smoothSpeed);
+        transform.LookAt(target.position + new Vector3(0, 1, 1) * targetDiff);
     }
 }

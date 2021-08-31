@@ -247,8 +247,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209604631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: -1, z: 18.39}
-  m_LocalScale: {x: 10, y: 1, z: 50}
+  m_LocalPosition: {x: 2.5, y: -1, z: 14.999999}
+  m_LocalScale: {x: 10, y: 1, z: 40}
   m_Children: []
   m_Father: {fileID: 531936988}
   m_RootOrder: 1
@@ -997,7 +997,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 30
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1022,13 +1022,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.11800642, y: -0.42370176, z: 0.055781376, w: 0.89634806}
-  m_LocalPosition: {x: 12.62, y: 5.5, z: -10.33}
+  m_LocalRotation: {x: 0.061819583, y: -0.32384264, z: 0.021210782, w: 0.9438509}
+  m_LocalPosition: {x: 7.000001, y: 3.7500005, z: -7.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 15, y: -50.6, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: -38.57, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,6 +1041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c738b83fc425e5245a845a5ec8db789c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 7, y: 2.5, z: -8}
+  smoothSpeed: 0.2
+  targetDiff: 1
 --- !u!4 &1092806754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 246117978882159971, guid: 314f7382a126a384ab6c80b043cf71e0, type: 3}
